@@ -8,6 +8,7 @@ const computerScoreDisplay = document.getElementById("computer-score");
 const messageDisplay = document.getElementById("message");
 const timerDisplay = document.getElementById("timer");
 const playAgainButton = document.getElementById("play-again");
+const resetGameButton = document.getElementById("reset-game");
 
 function computerPlay() {
   const choices = ["rock", "paper", "scissors"];
@@ -30,7 +31,7 @@ function resetGame() {
   computerScore = 0;
   playerScoreDisplay.textContent = `Player: ${playerScore}`;
   computerScoreDisplay.textContent = `Computer: ${computerScore}`;
-  messageDisplay.textContent = "Choose your weapon";
+  messageDisplay.textContent = "Shoot!!!!";
   playAgainButton.style.display = "none";
 }
 
@@ -56,13 +57,16 @@ function playRound(playerChoice) {
     }, 1000);
     updateScore(winner);
     if (playerScore === 3 || computerScore === 3) {
-      if (playerScore === 5) {
+      if (playerScore === 3) {
         messageDisplay.textContent = "Player wins the game!";
+        resetGame();
       } else {
         messageDisplay.textContent = "Computer wins the game!";
+        resetGame();
       }
       playAgainButton.style.display = "flex";
-      playAgainButton.style.justifyContent='center'
+      playAgainButton.style.justifyContent = 'center'
+      resetGameButton.style.display = 'none';
     } else {
       timer = 8;
     }
@@ -76,17 +80,21 @@ playerChoices.forEach((choice) => {
   });
 });
 
-function countdown() {
-  timerDisplay.textContent = `Time left: ${timer}`;
-  if (timer === 0) {
-    playRound(computerPlay());
-    timer = 8;
-  } else {
-    timer--;
-    setTimeout(countdown, 1000);
-  }
-}
+// function countdown() {
+//   timerDisplay.textContent = `Time left: ${timer}`;
+//   if (timer === 0) {
+//     playRound(computerPlay());
+//     timer = 8;
+//   } else {
+//     timer--;
+//     setTimeout(countdown, 1000);
+//   }
+// }
 
-countdown();
+// countdown();
+
+
+resetGameButton.addEventListener("click", resetGame);
+
 
 playAgainButton.addEventListener("click", resetGame);
