@@ -9,6 +9,9 @@ const messageDisplay = document.getElementById("message");
 const timerDisplay = document.getElementById("timer");
 const playAgainButton = document.getElementById("play-again");
 const resetGameButton = document.getElementById("reset-game");
+const rockClick = document.getElementById('rock');
+const paperClick = document.getElementById('paper');
+const scissorsClick = document.getElementById('scissors');
 
 function computerPlay() {
   const choices = ["rock", "paper", "scissors"];
@@ -59,10 +62,8 @@ function playRound(playerChoice) {
     if (playerScore === 3 || computerScore === 3) {
       if (playerScore === 3) {
         messageDisplay.textContent = "Player wins the game!";
-        resetGame();
       } else {
         messageDisplay.textContent = "Computer wins the game!";
-        resetGame();
       }
       playAgainButton.style.display = "flex";
       playAgainButton.style.justifyContent = 'center'
@@ -75,23 +76,11 @@ function playRound(playerChoice) {
 
 playerChoices.forEach((choice) => {
   choice.addEventListener("click", () => {
+    if (playerScore === 3) return;
     const playerChoice = choice.id;
     playRound(playerChoice);
   });
 });
-
-// function countdown() {
-//   timerDisplay.textContent = `Time left: ${timer}`;
-//   if (timer === 0) {
-//     playRound(computerPlay());
-//     timer = 8;
-//   } else {
-//     timer--;
-//     setTimeout(countdown, 1000);
-//   }
-// }
-
-// countdown();
 
 
 resetGameButton.addEventListener("click", resetGame);

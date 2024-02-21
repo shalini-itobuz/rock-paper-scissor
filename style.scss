@@ -172,7 +172,15 @@ body {
   margin-bottom: 20px;
 }
 
-#play-again,
+#play-again {
+  --clr: rgb(147, 234, 132);
+  --outline1: 2px solid rgb(147, 234, 132);
+  color: var(--clr);
+  outline: var(--outline);
+  border: var(--outline);
+  outline-offset: -2px;
+  transition: outline-width 200ms ease, outline-offset 200ms ease;
+}
 #reset-game {
   --clr: rgb(126, 42, 222);
   --outline: 2px solid rgb(126, 42, 222);
@@ -183,7 +191,11 @@ body {
   transition: outline-width 200ms ease, outline-offset 200ms ease;
 }
 
-#play-again:hover,
+#play-again:hover {
+  outline: var(--outline1);
+  outline-width: 6px;
+  outline-offset: -6px;
+}
 #reset-game:hover {
   outline: var(--outline);
   outline-width: 6px;
