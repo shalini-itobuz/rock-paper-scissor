@@ -1,7 +1,3 @@
-let playerScore = 0;
-let computerScore = 0;
-let timer = 8;
-
 const playerChoices = document.querySelectorAll(".choice");
 const playerScoreDisplay = document.getElementById("player-score");
 const computerScoreDisplay = document.getElementById("computer-score");
@@ -12,6 +8,10 @@ const resetGameButton = document.getElementById("reset-game");
 const rockClick = document.getElementById('rock');
 const paperClick = document.getElementById('paper');
 const scissorsClick = document.getElementById('scissors');
+
+let playerScore = 0;
+let computerScore = 0;
+let timer = 8;
 
 function computerPlay() {
   const choices = ["rock", "paper", "scissors"];
