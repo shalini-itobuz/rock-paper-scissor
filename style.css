@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.game-area {
+  margin-bottom: 20px;
+}
+
+.choice {
+  width: 100px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+#message {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#timer {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#play-again {
+  font-size: 16px;
+  display: flex;
+  justify-content: between;
+}/*# sourceMappingURL=style.css.map */
